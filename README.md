@@ -1,61 +1,52 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Deploy Laravel on Vercel
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+<!-- [![Latest Version on Packagist](https://img.shields.io/packagist/v/davidgrzyb/deploy-laravel-on-vercel.svg?style=flat-square)](https://packagist.org/packages/davidgrzyb/deploy-laravel-on-vercel)
+[![Total Downloads](https://img.shields.io/packagist/dt/davidgrzyb/deploy-laravel-on-vercel.svg?style=flat-square)](https://packagist.org/packages/davidgrzyb/deploy-laravel-on-vercel)
+![GitHub Actions](https://github.com/davidgrzyb/deploy-laravel-on-vercel/actions/workflows/main.yml/badge.svg) -->
 
-## About Laravel
+**This is a packaged version of [Caleb Porzio's blog post](https://calebporzio.com/easy-free-serverless-laravel-with-vercel) detailing the process of deploying Laravel to serverless Vercel.**
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+This package publishes the `api/index.php`, `vercel.json` & `.vercelignore` files required for deploying Laravel to Vercel. The PHP version can be changed by `vercel-php` runtime within the `vercel.json` file. The default version is `0.4.0`.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Installation
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+You can install the package via composer as a dev dependency:
 
-## Learning Laravel
+```bash
+composer require davidgrzyb/deploy-laravel-on-vercel --dev
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Publishing Assets
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+The installation command can be run to publish and republish the required files.
 
-## Laravel Sponsors
+```bash
+php artisan deploy-laravel-on-vercel:install
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Once the assets have been published, the package can be removed.
 
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+```bash
+composer remove davidgrzyb/deploy-laravel-on-vercel --dev
+```
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
-## Code of Conduct
+### Security
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+If you discover any security related issues, please email grzybdavid@gmail.com instead of using the issue tracker.
 
-## Security Vulnerabilities
+## Credits
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+-   [David Grzyb](https://github.com/davidgrzyb)
+-   [All Contributors](../../contributors)
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+## Laravel Package Boilerplate
+
+This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
